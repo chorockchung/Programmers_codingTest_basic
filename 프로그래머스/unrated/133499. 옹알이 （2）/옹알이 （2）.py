@@ -9,17 +9,10 @@ def solution(babbling):
     for b in babbling:
         for c in can:
             if(b.find(c) != -1):
-                # if(b[b.find(c)+len(c):b.find(c)+len(c)*2] != c):
-                if(re.search(c*2, b)):
-                    print(b)
-                else:    
+                if(re.search(c*2, b) == None):  
                     b = b.replace(c, '0')
-                    # print(b)
-                    if(b.isdigit()):
-                        cnt += 1
-                        break
-                    # if(p.search(b) != None):
-                    #     print(p.findall(b), b)
-                    #     break
+                if(b.isdigit()):
+                    cnt += 1
+                    break
 
     return cnt
